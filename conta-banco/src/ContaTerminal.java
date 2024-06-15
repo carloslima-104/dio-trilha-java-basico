@@ -20,8 +20,11 @@ public class ContaTerminal {
 
             // Exibir a mensagem conta criada
             System.out.printf("Olá %s, obrigado por criar uma conta em nosso banco, sua agência é %s, conta %d e seu saldo R$ %.2f já está disponível para saque.%n", nome, agencia, conta, saldo);
-        } finally {
+        
             scanner.close();  // Garante que o scanner é fechado
+            }
+        catch (java.util.InputMismatchException e){
+            System.out.println("Os campos conta e saldo são numéricos");
         }
     }
 }
